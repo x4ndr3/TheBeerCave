@@ -1,0 +1,174 @@
+:root {
+    --bg-color-primary: #121212;
+    --bg-color-secondary: #1e1e1e;
+    --text-color-primary: #ffffff;
+    --text-color-secondary: #aaaaaa;
+    --accent-color-pink: #ff00ff;
+    --accent-color-blue: #00ffff;
+    --accent-color-orange: #ff9900;
+    --font-family-base: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --font-family-display: 'Righteous', cursive;
+    /* Example retro font if available, falling back */
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color-primary);
+    color: var(--text-color-primary);
+    font-family: var(--font-family-base);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-family-display, var(--font-family-base));
+    font-weight: 700;
+}
+
+/* Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.text-accent-pink {
+    color: var(--accent-color-pink);
+}
+
+.text-accent-blue {
+    color: var(--accent-color-blue);
+}
+
+.text-accent-orange {
+    color: var(--accent-color-orange);
+}
+
+/* Components */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    border: 2px solid var(--accent-color-pink);
+    color: var(--text-color-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    background: transparent;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--accent-color-pink);
+    color: var(--bg-color-primary);
+    box-shadow: 0 0 10px var(--accent-color-pink);
+}
+
+/* Navbar */
+nav {
+    padding: 1rem 0;
+    border-bottom: 1px solid #333;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color-orange);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/taps.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4);
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: var(--text-color-secondary);
+    margin-bottom: 2rem;
+}
+
+/* Gallery / Showcase */
+.showcase {
+    padding: 4rem 0;
+}
+
+.showcase h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--bg-color-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card h3 {
+    color: var(--accent-color-blue);
+    margin-top: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: #000;
+    color: #666;
+}
