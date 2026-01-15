@@ -199,8 +199,8 @@ resource "aws_apigatewayv2_api" "api" {
   protocol_type = "HTTP"
   cors_configuration {
     allow_origins = ["*"] # Restrict to CloudFront domain in prod
-    allow_methods = ["POST", "OPTIONS"]
-    allow_headers = ["content-type"]
+    allow_methods = ["POST", "GET", "OPTIONS"]
+    allow_headers = ["content-type", "authorization"]
   }
 }
 
@@ -263,6 +263,7 @@ resource "aws_cognito_user_pool_client" "admin" {
 
   explicit_auth_flows = [
     "ALLOW_USER_PASSWORD_AUTH",
+    "ALLOW_USER_SRP_AUTH",
     "ALLOW_REFRESH_TOKEN_AUTH"
   ]
 
