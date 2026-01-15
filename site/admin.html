@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | The Beer Cave</title>
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Press+Start+2P&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        .admin-page {
+            max-width: 1000px;
+            margin: 100px auto;
+            padding: 2rem;
+        }
+
+        .login-card {
+            background: var(--color-surface);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-primary);
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+        }
+
+        .dashboard {
+            display: none;
+        }
+
+        .message-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+            font-size: 0.9rem;
+        }
+
+        .logout-btn {
+            float: right;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            margin-top: -10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="crt-overlay"></div>
+
+    <div class="admin-page">
+        <!-- Login Section -->
+        <div id="login-section" class="login-card">
+            <h2 class="font-arcade text-primary" style="text-align: center; margin-bottom: 2rem;">Admin Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="login-email" required placeholder="admin@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="login-password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn-submit">Initialize session</button>
+            </form>
+            <p id="login-error" style="color: red; margin-top: 1rem; font-size: 0.9rem;"></p>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div id="dashboard-section" class="dashboard">
+            <button id="logout-btn" class="btn-submit logout-btn">Logout</button>
+            <h1 class="font-arcade text-primary">Mission Control</h1>
+            <p class="text-secondary" style="margin-bottom: 2rem;">Intercepted communications from the surface.</p>
+
+            <div id="messages-list">
+                <p>Retrieving data...</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./src/admin.js"></script>
+</body>
+
+</html>

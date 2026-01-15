@@ -21,39 +21,33 @@ if (form) {
     e.preventDefault();
     const status = document.getElementById('form-status');
     const btn = form.querySelector('button');
-    
+
     // Simple validation
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    
+
     // Disable button
     btn.disabled = true;
     btn.textContent = 'Sending...';
     status.textContent = '';
-    
+
     // For now we just simulate success or point to the future API
     // In production, this will point to the API Gateway URL
-    const apiUrl = import.meta.env.VITE_API_URL || '/api/contact'; 
+    const apiUrl = import.meta.env.VITE_API_URL + '/contact';
 
     try {
-      // Logic for real submission would go here. 
-      // Since backend isn't deployed yet and connected, we simulate or attempt fetch.
-      /* 
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
-      if (!response.ok) throw new Error('Failed');
-      */
-      
-      // Simulation for frontend demo
-      await new Promise(r => setTimeout(r, 1000));
-      
+
+      if (!response.ok) throw new Error('Failed to send message');
+
       status.textContent = 'Message received! Game on!';
       status.style.color = 'var(--color-accent)';
       form.reset();
-      
+
     } catch (err) {
       status.textContent = 'Error sending message. Please try again.';
       status.style.color = 'red';

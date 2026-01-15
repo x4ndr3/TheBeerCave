@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "amazon-cognito-identity-js": "^6.3.16"
   }
 }

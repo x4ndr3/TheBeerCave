@@ -345,3 +345,11 @@ output "s3_bucket_name" {
 output "cloudfront_distribution_id" {
   value = aws_cloudfront_distribution.site.id
 }
+
+output "cognito_user_pool_id" {
+  value = aws_cognito_user_pool.admin.id
+}
+
+output "cognito_client_id" {
+  value = aws_cognito_user_pool_client.admin.id
+}
